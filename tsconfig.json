@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false,
+    "incremental": true,
+    "target": "ES2022",
+    "module": "CommonJS",
+    "types": [
+      "node",
+    ],
+    "strict": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "rootDir": ".",
+    "outDir": "build",
+    "typeRoots": [
+      "./node_modules/@types",
+    ],
+    "paths": {
+      "@Programming-challenges/*": [
+        "programming-challenges/*.ts"
+      ],
+      "@Config/*": [
+        "configs/*.ts",
+      ]
+    }
+  },
+}
