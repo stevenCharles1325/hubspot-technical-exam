@@ -9,6 +9,8 @@ user, so it would not be a hassle.
 There are two parts in the technical exam which are the `Programming Challenges` and `Integration Task`, therefore, inside the `src` folder
 you will find two corresponding directories.
 
+Do not forget to install dependencies with `npm i` before running start commands. Thank you so much!
+
 `Running Programming Challenges`
 
 - Uncomment the task you would like to run and run the command below.
