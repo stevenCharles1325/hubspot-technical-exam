@@ -24,10 +24,16 @@
     ],
     "paths": {
       "@Programming-challenges/*": [
-        "programming-challenges/*.ts"
+        "src/programming-challenges/*.ts"
+      ],
+      "@Integration-task/*": [
+        "src/integration-task/*.ts"
       ],
       "@Config/*": [
         "configs/*.ts",
+      ],
+      "@Module/*": [
+        "modules/*.ts",
       ]
     }
   },

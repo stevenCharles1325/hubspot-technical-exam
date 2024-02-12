@@ -1,4 +1,4 @@
-import hubspotClient from "@Config/hubspot.config";
+import hubspotClient from "@Module/hubspot.module";
 import { PublicObjectSearchRequest } from "@hubspot/api-client/lib/codegen/crm/companies";
 
 async function getUsers () {
@@ -14,6 +14,7 @@ async function getUsers () {
     const { results: users } = response;
 
     console.log(users);
+    return users;
 }
 
 export default getUsers;

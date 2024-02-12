@@ -1,4 +1,4 @@
-import hubspotClient from "@Config/hubspot.config";
+import hubspotClient from "@Module/hubspot.module";
 
 interface IContact {
     email: string;
@@ -8,24 +8,22 @@ interface IContact {
 
 async function createContact (contact: IContact) {
     const {
-        email,
-        firstname,
-        lastname
+        email = '',
+        firstname = '',
+        lastname = ''
     } = contact;
 
-	if (!email.length || !firstname.length || !lastname.length) {
-        const emptyPropertyKeys = Object
-            .entries(contact)
-            .filter(([ key, val ]) => {
-                if (!val.length) {
-                    return key.toLocaleLowerCase();
-                }
-            });
+    const missingValues = [];
 
+    if (!email?.length) missingValues.push('Email');
+    if (!firstname?.length) missingValues.push('Firstname');
+    if (!lastname?.length) missingValues.push('Lastname');
+
+	if (missingValues.length) {
         throw new Error (
-            `Fields ${
-                emptyPropertyKeys.join(', ')
-            } are required`
+            `Field(s) ${
+                missingValues.join(', ')
+            } is/are required`
         );
     }
 
@@ -36,6 +34,8 @@ async function createContact (contact: IContact) {
 
     console.log('Successfully created new contact');
     console.log(newContact);
+
+    return newContact;
 }
 
 // [Warning] This might be created already!

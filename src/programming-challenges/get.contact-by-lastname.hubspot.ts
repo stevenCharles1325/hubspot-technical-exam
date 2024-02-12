@@ -1,4 +1,4 @@
-import hubspotClient from "@Config/hubspot.config";
+import hubspotClient from "@Module/hubspot.module";
 import { PublicObjectSearchRequest } from "@hubspot/api-client/lib/codegen/crm/companies";
 
 async function getContactByLastname (lastname: string | null = null) {
@@ -26,6 +26,7 @@ async function getContactByLastname (lastname: string | null = null) {
     const { total } = response;
 
     console.log(`Total contacts with lastname "${lastname}" count: `, total);
+    return total;
 }
 
 export default getContactByLastname;
